@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-mind",     "homepage": "https://github.com/npmtest/node-npmtest-node-mind",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-mind.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-mind (v0.2.1)](https://github.com/stevenmiller888/mind#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-node-mind.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-mind) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-mind.svg)](https://travis-ci.org/npmtest/node-npmtest-node-mind)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-mind",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-mind"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_mind.js",
+    "name": "npmtest-node-mind",
+    "nameAlias": "npmtest_node_mind",
+    "nameOriginal": "npmtest-node-mind",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-mind.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
